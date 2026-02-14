@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 300 100% 97%;
+    --foreground: 300 20% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 300 20% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 300 20% 20%;
+    --primary: 320 70% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 60% 65%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 300 30% 85%;
+    --muted-foreground: 300 20% 40%;
+    --accent: 320 70% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 300 30% 90%;
+    --input: 300 30% 95%;
+    --ring: 320 70% 60%;
+    --chart-1: 320 70% 60%;
+    --chart-2: 280 60% 65%;
+    --chart-3: 0 0% 90%;
+    --chart-4: 320 50% 70%;
+    --chart-5: 280 40% 75%;
+    --radius: 1rem;
+    --sidebar-background: 300 100% 97%;
+    --sidebar-foreground: 300 20% 20%;
+    --sidebar-primary: 320 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 280 60% 65%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 300 30% 90%;
+    --sidebar-ring: 320 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes particle-burst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty))) scale(0);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@layer components {
+  .animate-float {
+    @apply animate-[float_6s_ease-in-out_infinite];
+  }
+  .animate-heart-beat {
+    @apply animate-[heartBeat_0.6s_ease-in-out];
+  }
+  .animate-spin-slow {
+    @apply animate-[spin-slow_3s_linear_infinite];
+  }
+  .animate-typewriter {
+    @apply animate-[typewriter_3s_steps(40,end)_forwards];
+  }
+  .animate-fade-in {
+    @apply animate-[fadeIn_0.6s_ease-out];
+  }
+  .animate-fade-out {
+    @apply animate-[fadeOut_2s_ease-out_forwards];
+  }
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/30 border border-white/20;
+  }
+  .gradient-romantic {
+    @apply bg-gradient-to-br from-pink-200 via-purple-200 to-rose-100;
+  }
+}
